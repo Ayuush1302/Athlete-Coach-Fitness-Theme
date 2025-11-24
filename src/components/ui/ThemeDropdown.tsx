@@ -66,23 +66,28 @@ export function ThemeDropdown() {
                   {hasDualPrimary ? (
                     // Two-color badge for dual-primary themes
                     <div className="color-preview-dual">
-                      <span 
-                        className="theme-dot" 
+                      <span
+                        className="theme-dot"
                         style={{ backgroundColor: theme.primaryOrange }}
                       />
-                      <span 
-                        className="theme-dot" 
+                      <span
+                        className="theme-dot"
                         style={{ backgroundColor: theme.primaryGreen }}
                       />
                     </div>
                   ) : (
-                    // Single color badge for standard themes
-                    <div
-                      className="color-preview"
-                      style={{ 
-                        backgroundColor: "primary" in theme ? theme.primary : "#000000" 
-                      }}
-                    />
+                    // Three-color badge for standard themes
+                    <div className="color-preview-multi">
+                      {[theme.primary, theme.secondary, theme.tertiary].map(
+                        (color, index) => (
+                          <span
+                            key={`${theme.name}-${index}`}
+                            className="theme-dot"
+                            style={{ backgroundColor: color }}
+                          />
+                        )
+                      )}
+                    </div>
                   )}
                   <span>{theme.name}</span>
                   {currentTheme === key && (
@@ -168,15 +173,14 @@ export function ThemeDropdown() {
           color: var(--primary-foreground);
         }
 
-        .color-preview {
-          width: 20px;
-          height: 20px;
-          border-radius: 4px;
-          border: 1px solid var(--border);
+        .color-preview-dual {
+          display: flex;
+          gap: 4px;
+          align-items: center;
           flex-shrink: 0;
         }
 
-        .color-preview-dual {
+        .color-preview-multi {
           display: flex;
           gap: 4px;
           align-items: center;
