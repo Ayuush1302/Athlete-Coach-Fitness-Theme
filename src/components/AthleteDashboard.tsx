@@ -4,11 +4,11 @@ import { Progress } from "./ui/progress";
 import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Calendar } from "./ui/calendar";
-import { 
-  Activity, 
-  TrendingUp, 
-  Droplets, 
-  Moon, 
+import {
+  Activity,
+  TrendingUp,
+  Droplets,
+  Moon,
   Flame,
   Target,
   Calendar as CalendarIcon,
@@ -144,12 +144,12 @@ export function AthleteDashboard() {
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="day" stroke="var(--muted-foreground)" />
               <YAxis stroke="var(--muted-foreground)" />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: "var(--card)", 
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "var(--card)",
                   border: "1px solid var(--border)",
                   borderRadius: "8px"
-                }} 
+                }}
               />
               <Bar dataKey="steps" fill="var(--chart-1)" radius={[8, 8, 0, 0]} />
             </BarChart>
@@ -169,33 +169,33 @@ export function AthleteDashboard() {
             <AreaChart data={progressData}>
               <defs>
                 <linearGradient id="weightGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="var(--chart-2)" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="var(--chart-2)" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="var(--chart-2)" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="var(--chart-2)" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="week" stroke="var(--muted-foreground)" />
               <YAxis stroke="var(--muted-foreground)" domain={[170, 190]} />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: "var(--card)", 
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "var(--card)",
                   border: "1px solid var(--border)",
                   borderRadius: "8px"
-                }} 
+                }}
               />
-              <Area 
-                type="monotone" 
-                dataKey="weight" 
-                stroke="var(--chart-2)" 
+              <Area
+                type="monotone"
+                dataKey="weight"
+                stroke="var(--chart-2)"
                 strokeWidth={2}
-                fill="url(#weightGradient)" 
+                fill="url(#weightGradient)"
               />
-              <Line 
-                type="monotone" 
-                dataKey="target" 
-                stroke="var(--primary)" 
+              <Line
+                type="monotone"
+                dataKey="target"
+                stroke="var(--primary)"
                 strokeWidth={2}
-                strokeDasharray="5 5" 
+                strokeDasharray="5 5"
               />
             </AreaChart>
           </ResponsiveContainer>
@@ -275,7 +275,7 @@ export function AthleteDashboard() {
             Nov 20 - Nov 27 Selected
           </Badge>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Calendar */}
           <div className="lg:col-span-2">

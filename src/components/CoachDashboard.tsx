@@ -5,10 +5,10 @@ import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
 import { Progress } from "./ui/progress";
-import { 
-  Users, 
-  DollarSign, 
-  TrendingUp, 
+import {
+  Users,
+  DollarSign,
+  TrendingUp,
   Calendar,
   Search,
   Filter,
@@ -143,26 +143,26 @@ export function CoachDashboard() {
             <AreaChart data={revenueData}>
               <defs>
                 <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="var(--chart-1)" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="var(--chart-1)" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="var(--chart-1)" stopOpacity={0.3} />
+                  <stop offset="95%" stopColor="var(--chart-1)" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="month" stroke="var(--muted-foreground)" />
               <YAxis stroke="var(--muted-foreground)" />
-              <Tooltip 
-                contentStyle={{ 
-                  backgroundColor: "var(--card)", 
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "var(--card)",
                   border: "1px solid var(--border)",
                   borderRadius: "8px"
-                }} 
+                }}
               />
-              <Area 
-                type="monotone" 
-                dataKey="revenue" 
-                stroke="var(--chart-1)" 
+              <Area
+                type="monotone"
+                dataKey="revenue"
+                stroke="var(--chart-1)"
                 strokeWidth={2}
-                fill="url(#revenueGradient)" 
+                fill="url(#revenueGradient)"
               />
             </AreaChart>
           </ResponsiveContainer>
@@ -222,7 +222,7 @@ export function CoachDashboard() {
             </Button>
           </div>
         </div>
-        
+
         <div className="border rounded-lg">
           <Table>
             <TableHeader>
@@ -248,14 +248,14 @@ export function CoachDashboard() {
                     </div>
                   </TableCell>
                   <TableCell>
-                    <Badge 
+                    <Badge
                       variant={client.status === "Active" ? "default" : client.status === "Pending" ? "secondary" : "outline"}
                       className={
-                        client.status === "Active" 
-                          ? "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800" 
+                        client.status === "Active"
+                          ? "bg-green-100 dark:bg-green-950 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800"
                           : client.status === "Pending"
-                          ? ""
-                          : "border-red-200 dark:border-red-800 text-red-700 dark:text-red-300"
+                            ? ""
+                            : "border-red-200 dark:border-red-800 text-red-700 dark:text-red-300"
                       }
                     >
                       {client.status}
